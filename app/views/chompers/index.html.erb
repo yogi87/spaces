@@ -1,0 +1,22 @@
+ </br>
+ <% if flash[:notice] %>
+   <div class = "alert alert-success"><%= flash[:notice] %></div>
+ <% end %>
+ 
+ <div class = "lead">Please enter arbitrary text from which to remove extra spaces from...</div>
+  <%= form_tag(chompers_path, :method => :get) do %>
+  <%= text_area_tag :input_text, "#{params[:input_text]}", rows: 15, cols: 75, :placeholder => 'Enter text...'%></br>
+  <%= submit_tag "Remove extra spaces", :class => "btn-large"%>
+    <%end%>
+    
+  </br>
+  
+  <div class = "lead">Found extra spaces here: </div>
+   <div class="hero-unit">	
+  <%= @uncleaned_text %>
+  </div>
+  
+  <div class = "lead">Cleaned text: </div>
+  <div class="hero-unit">	
+ <%= @cleaned_text %>
+ </div>

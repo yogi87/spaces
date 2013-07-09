@@ -1,0 +1,2 @@
+module ChompersHelper
+end
